@@ -28,14 +28,7 @@
       <keyMapping columnObjectName="Projection_1" columnName="name"/>
     </attribute>
   </attributes>
-  <calculatedAttributes>
-    <calculatedAttribute id="counter" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="counter"/>
-      <keyCalculation datatype="INTEGER" expressionLanguage="SQL">
-        <formula>1</formula>
-      </keyCalculation>
-      </calculatedAttribute>
-  </calculatedAttributes>
+  <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures/>
   <restrictedMeasures/>

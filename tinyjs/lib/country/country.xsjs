@@ -12,23 +12,28 @@ conn.commit();
 
 conn.close();
 
-if (result && result.EX_ERROR != null) { return result.EX_ERROR;}
+if (result && result.EX_ERROR != null) {
 
-else { return output; }
+      return {body : result, status: $.net.http.BAD_REQUEST};
+
+} else {
+
+      return {body : output, status: $.net.http.CREATED};
 
 }
 
-var country = {
+}
 
-  name: $.request.parameters.get("name"),
+var body = $.request.body.asString();
 
-  partof: $.request.parameters.get("continent")
-
-};
+var country = JSON.parse(body);
 
 // validate the inputs here!
 
 var output = saveCountry(country);
 
 $.response.contentType = "application/json";
-$.response.setBody(output);
+
+$.response.setBody(output.body);
+
+$.response.status = output.status;
